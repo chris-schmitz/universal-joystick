@@ -3,14 +3,12 @@
         {
             "name": "Mac",
             "includePath": [
-                "/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/cores/arduino",
-                "/Users/cschmitz/Documents/Arduino/libraries"
+                "/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/cores/arduino"
             ],
             "browse": {
                 "limitSymbolsToIncludedHeaders": false,
                 "path": [
-                    "/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/cores/arduino",
-                    "${workspaceRoot}"
+                    "/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/cores/arduino"
                 ]
             },
             "intelliSenseMode": "clang-x64",

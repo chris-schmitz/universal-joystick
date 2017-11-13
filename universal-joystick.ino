@@ -51,7 +51,7 @@ up_bmp[] =
     B00011000,
     B00011000
 },
-left_bmp[] =
+right_bmp[] =
 {
     B00001000,
     B00001100,
@@ -62,7 +62,7 @@ left_bmp[] =
     B00001100,
     B00001000
 },
-right_bmp[] =
+left_bmp[] =
 {
     B00010000,
     B00110000,
@@ -158,11 +158,6 @@ void setup() {
 }
 
 void loop() {
-    // so what do we want?
-    // directions to correspond to a light
-    // pushing button lights up the button and all direction leds
-    // pushing button again turns off all lights again
-
 
     int leftState = digitalRead(LEFT);
     int rightState = digitalRead(RIGHT);
@@ -185,13 +180,13 @@ void loop() {
         digitalWrite(DOWN_LED, LOW);
 
         digitalWrite(BUTTON_LED, LOW);
+        return;
     }
 
 
     if (leftState == LOW) {
         matrix.clear();
         matrix.drawBitmap(0, 0, left_bmp, 8, 8, LED_RED);
-        // matrix.writeDisplay();
 
         digitalWrite(LEFT_LED, HIGH);
     }
@@ -199,7 +194,6 @@ void loop() {
     if (rightState == LOW) {
         matrix.clear();
         matrix.drawBitmap(0, 0, right_bmp, 8, 8, LED_RED);
-        // matrix.writeDisplay();
 
         digitalWrite(RIGHT_LED, HIGH);
     }
@@ -207,14 +201,12 @@ void loop() {
     if (upState == LOW) {
         matrix.clear();
         matrix.drawBitmap(0, 0, up_bmp, 8, 8, LED_RED);
-        // matrix.writeDisplay();
         digitalWrite(UP_LED, HIGH);
     }
 
     if (downState == LOW) {
         matrix.clear();
         matrix.drawBitmap(0, 0, down_bmp, 8, 8, LED_RED);
-        // matrix.writeDisplay();
 
         digitalWrite(DOWN_LED, HIGH);
     }
@@ -242,7 +234,6 @@ void loop() {
     if (buttonState == LOW) {
         matrix.clear();
         matrix.drawRect(1, 1, 6, 6, LED_GREEN);
-        // matrix.writeDisplay();
 
         digitalWrite(BUTTON_LED, HIGH);
 
